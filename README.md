@@ -8,4 +8,4 @@
 
 [Официальный сайт Geoserver](https://geoserver.org)
 
-[Репозиторий Geoserver]([https://geoserver.org](https://github.com/geoserver/geoserver))
+[Репозиторий Geoserver](https://github.com/geoserver/geoserver)
