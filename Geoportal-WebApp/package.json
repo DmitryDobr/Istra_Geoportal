@@ -1,0 +1,15 @@
+{
+  "name": "IstraGeoportal-Webapp",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.2.10"
+  },
+  "dependencies": {
+    "ol": "^9.1.0"
+  }
+}
