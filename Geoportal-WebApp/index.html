@@ -11,11 +11,20 @@
   <header>
     <div class="header_container">
       <elem><img src="./source/Gerb.png" alt="Текст" class = "GerbImage"></elem>
-      <elem>Геопортал городского округа Истра, бета-версия</elem>
+      <elem style="flex-grow: 1;">Геопортал городского округа Истра, бета-версия</elem>
+      <button id="menuButton">≡</button>
     </div>
   </header>
 
   <main>
+    <div id="MapNavigation">
+      <div class="MapNavContainer">
+        <a href="./" class="MapNavLink">Карта теплоснабжения</a>
+        <a href="./" class="MapNavLink">Карта электроснабжения</a>
+        <a href="./" class="MapNavLink">Карта водоснабжения</a>
+      </div>
+    </div>
+
     <div id="map">
       <div id="HAHA">
         <button class="" id="ControlButton">Состав карты</button>

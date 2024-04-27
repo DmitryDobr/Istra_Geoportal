@@ -1,24 +1,42 @@
 import ImageWMS from 'ol/source/ImageWMS.js';
 import {Image as ImageLayer} from 'ol/layer.js';
 
+import JSONDataHeat from './layers_heat.json'
+import JSONDataWater from './layers_water.json'
 
-const layersAddress = new Map([
-    ['Границы города', 'my_workSpace_1:istra_boundary'],
-    ['Зона теплоснабжения', 'my_workSpace_1:kotelni_zones'],
-    ['Линии теплопередачи', 'my_workSpace_1:kotelni_lines'],
-    ['Котельные', 'my_workSpace_1:kotelni']
-]);
+// const layersAddress = new Map([
+//     ['Границы города', 'my_workSpace_1:istra_boundary'],
+//     ['Зона теплоснабжения', 'my_workSpace_1:kotelni_zones'],
+//     ['Линии теплопередачи', 'my_workSpace_1:kotelni_lines'],
+//     ['Котельные', 'my_workSpace_1:kotelni']
+// ]);
 
+// const layersAddress1 = new Map([
+//     ['Границы города', 'my_workSpace_1:istra_boundary'],
+//     ['Линии водоснабжения', 'my_workSpace_1:line_water'],
+//     ['Водозаборные узлы', 'my_workSpace_1:water_get_node'],
+//     ['Канализационно-насосные станции', 'my_workSpace_1:water_pump_station']
+// ]);
 
 const loadLayers = () => {
+
+    for (let JSONobj of JSONDataHeat)
+    {
+        console.log(JSONobj.name)
+    }
 
     var totalLayers = new Map();
     // console.log(totalLayers)
 
-    for (let pair of layersAddress.entries()) {
+    for (let JSONobj of JSONDataHeat) {
 
-        var layerName = pair[0];
-        var layerAddr = pair[1];
+        var layerName = JSONobj.name;
+        var layerAddr = JSONobj.addr;
+
+        if (layerName === null || layerAddr === null)
+        {
+            return
+        }
 
         // opredelenie sloa
         let basemap = new ImageLayer({

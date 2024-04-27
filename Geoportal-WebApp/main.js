@@ -95,7 +95,7 @@ function initMap() {
   // sloi
   var layers = loadLayers(); // zagruzka sloev karti teplosnabzenia
   // layers.set('OSM', TileOSM)
-  console.log(layers)
+  // console.log(layers)
   for (var l of layers) {map.addLayer(l[1])}
   initLayerControlGroup("Схема теплоснабжения г.Истра", layers)
 
@@ -106,12 +106,29 @@ initMap();
 
 function myFunction() {
   var x = document.getElementById("LayerControlBox");
-  console.log(x)
+  // console.log(x)
   if (x.style.display === "none") {
       x.style.display = "block";
   } else {
       x.style.display = "none";
   }
+
+  x = document.getElementById("MapNavigation");
+  x.style.display = "none";
 }
 document.getElementById("ControlButton").addEventListener("click", myFunction);
 
+
+function myFunction1() {
+  var x = document.getElementById("MapNavigation");
+  // console.log(x)
+  if (x.style.display === "none") {
+      x.style.display = "block";
+  } else {
+      x.style.display = "none";
+  }
+
+  x = document.getElementById("LayerControlBox");
+  x.style.display = "none";
+}
+document.getElementById("menuButton").addEventListener("click", myFunction1);

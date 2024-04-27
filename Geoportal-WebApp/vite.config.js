@@ -1,5 +1,14 @@
+import {
+  defineConfig
+} from 'vite';
+
 export default {
   build: {
-    sourcemap: true,
-  }
+    rollupOptions: {
+       input: {
+          main: 'index.html',
+          'about': 'about.html', // Add your additional pages here
+       },
+    },
+ },
 }
