@@ -1,6 +1,7 @@
 {
-  "name": "IstraGeoportal-Webapp",
+  "name": "my-app",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -11,6 +12,7 @@
   },
   "dependencies": {
     "ol": "^9.1.0",
-    "require": "^2.4.20"
+    "path": "^0.12.7",
+    "vite-server-plugin-proxy": "^1.0.0-rc.1"
   }
 }

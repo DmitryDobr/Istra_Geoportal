@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Геопортал городского округа Истра</title>
+</head>
+<body>
+  <noscript>Необходимо включить JavaScript в браузере</noscript>
+
+  <header>
+    <div class="header_container">
+      <elem><img src="./_src/img/Gerb.png" alt="Текст" class = "GerbImage"></elem>
+      <elem style="flex-grow: 1;">Геопортал городского округа Истра, бета-версия</elem>
+      <button id="menuButton">≡</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="MapNavigation" style="display: none;">
+      <div class="MapNavContainer">
+        <a href="" class="MapNavLink">Главная страница</a>
+        <a href="teplosnabzhenie/" class="MapNavLink">Карта теплоснабжения</a>
+        <a href="electrosnabzhenie/" class="MapNavLink">Карта электроснабжения</a>
+        <a href="vodosnabzhenie/" class="MapNavLink">Карта водоснабжения</a>
+      </div>
+    </div>
+
+    <div class="mainText">
+      <h3>Информация о геопортале</h3>
+      <p>Геопортал городского округа Истра разработан в 2024 г. в рамках выполнения работ по созданию и развитию
+        региональных и муниципальных геоинформационных систем субъектов Российской Федерации.
+      </p>
+      <p>
+        Основные цели геопортала - предоставление в широкий доступ цифровые карты на территорию городского округа. Тематическое
+        заполнение карт соответствует вопросам местного значения городского округа Истра, указанных в Уставе ГО.
+        <div class="quote">
+          <div class="quote_inner">
+            <div class="quote_header">Статья 6. Вопросы местного значения городского округа</div>
+            <div>1. К вопросам местного значения городского округа относятся:</div>
+            <div class="quote_dot">...</div>
+            <div>
+              4) организация в границах городского округа электро-, тепло-, газо- и водоснабжения
+              населения, водоотведения, снабжения населения топливом в пределах полномочий,
+              установленных законодательством Российской Федерации;
+            </div>
+            <div class="quote_dot">...</div>
+          </div>
+        </div>
+      </p>
+      <p>
+        Доступные цифровые карты:
+        <div class="TextMapContainer">
+          <a href="teplosnabzhenie/">Карта теплоснабжения</a>
+          <a href="electrosnabzhenie/">Карта электроснабжения</a>
+          <a href="vodosnabzhenie/">Карта водоснабжения</a>
+        </div>
+      </p>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </main>
+
+  <footer>
+    <div class="footer_container">
+      <div>Разработчик: Доброовльский Д.А., РСБО-02-21</div>
+      <div>ГИС ИРИ РТУ МИРЭА, 2024 г. </div>
+    </div>
+  </footer>
+
+</body>
+</html>
