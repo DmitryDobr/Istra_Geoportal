@@ -24,7 +24,6 @@ const loadTileLayers = () => {
     totalLayers.set('ESRI', TileESRI);
     totalLayers.set('Open Street Map', TileOSM);
     
-
     return totalLayers;
 }
 

@@ -1,20 +1,12 @@
 import ImageWMS from 'ol/source/ImageWMS.js';
 import {Image as ImageLayer} from 'ol/layer.js';
 
-import JSONDataHeat from './layers_heat.json'
-import JSONDataWater from './layers_water.json'
 
-const loadLayers = () => {
-
-    for (let JSONobj of JSONDataHeat)
-    {
-        console.log(JSONobj.name)
-    }
-
+const loadLayers = (JSONDataSet) => {
     var totalLayers = new Map();
     // console.log(totalLayers)
 
-    for (let JSONobj of JSONDataHeat) {
+    for (let JSONobj of JSONDataSet) {
 
         var layerName = JSONobj.name;
         var layerAddr = JSONobj.addr;
