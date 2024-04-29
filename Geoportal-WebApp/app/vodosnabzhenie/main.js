@@ -9,7 +9,7 @@ import loadLayers from '../_src/scripts/loadLayer';
 import loadTileLayers from '../_src/scripts/loadTile';
 import initLayerControlGroup from '../_src/scripts/addControlGroup';
 
-import JSONDataHeat from './layers_heat.json'
+import JSONDataHeat from './layers_water.json'
 
 
 function initMap() {
