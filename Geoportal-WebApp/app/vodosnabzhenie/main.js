@@ -34,7 +34,7 @@ function initMap() {
 
   var layers = loadLayers(JSONDataHeat); // zagruzka sloev karti teplosnabzenia
   for (var l of layers) {map.addLayer(l[1])}
-  initLayerControlGroup("Схема теплоснабжения г.Истра", layers)
+  initLayerControlGroup("Схема водоснабжения г.Истра", layers)
 }
 
 initMap();
