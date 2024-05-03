@@ -1,0 +1,14 @@
+[
+    {
+      "name": "Границы города",
+      "addr": "my_workSpace_1:istra_boundary"
+    },
+    {
+      "name": "Линии электроснабжения",
+      "addr": "my_workSpace_1:power_lines"
+    },
+    {
+      "name": "Электроподстанции",
+      "addr": "my_workSpace_1:power_substation"
+    }
+]

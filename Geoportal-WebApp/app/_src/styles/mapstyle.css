@@ -1,29 +1,17 @@
-@import "node_modules/ol/ol.css";
-
-/* html, body {
-  margin: 0;
-  height: 100%;
-} */
+@import "../../../node_modules/ol/ol.css";
 
 #map {
   /* position: absolute; */
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 500px;
-}
-header {
-  background-color: #276e94;
-  color: aliceblue;
+  /* min-height: 500px; */
+  height: 100%;
 }
 
 main {
-  min-height: 500px;
-}
-
-footer {
-  background-color: #276e94;
-  color: aliceblue;
+  /* min-height: 500px; */
+  height: calc(100vh - 140px);
 }
 
 #HAHA {
@@ -31,22 +19,23 @@ footer {
   z-index: 1;
   margin-top: 70px;
   margin-left: 8px;
+
+  /* display: flex;
+  column-gap: 10px; */
 }
 
-.header_container {
-  display: flex;
-  column-gap: 30px;
-  align-items: center;
-  padding: 10px 10px 5px 20px;
+#ControlButton{
+  background-color: white;
+  border-radius: 2px;
+  color: #666666;
+  border: none;
+  height: 1.5em;
+  border: 1px solid rgba(102, 102, 102,0);
 }
 
-.GerbImage {
-  width: 40px;
-  height: 50px;
-}
-
-.footer_container {
-  padding: 10px 10px 20px 10px;
+#ControlButton:hover{
+  border: 1px solid #666666;
+  color: black;
 }
 
 #LayerControlBox{
@@ -69,11 +58,6 @@ footer {
   padding-left: 10px;
   padding-top: 10px;
 }
-
-.LayerControlGroup {
-  /* padding-top: 10px; */
-}
-
 
 .MapLayerCheckbox {
   margin-right: 10px;

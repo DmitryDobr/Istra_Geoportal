@@ -2,23 +2,19 @@ import ImageWMS from 'ol/source/ImageWMS.js';
 import {Image as ImageLayer} from 'ol/layer.js';
 
 
-const layersAddress = new Map([
-    ['Границы города', 'my_workSpace_1:istra_boundary'],
-    ['Зона теплоснабжения', 'my_workSpace_1:kotelni_zones'],
-    ['Линии теплопередачи', 'my_workSpace_1:kotelni_lines'],
-    ['Котельные', 'my_workSpace_1:kotelni']
-]);
-
-
-const loadLayers = () => {
-
+const loadLayers = (JSONDataSet) => {
     var totalLayers = new Map();
     // console.log(totalLayers)
 
-    for (let pair of layersAddress.entries()) {
+    for (let JSONobj of JSONDataSet) {
 
-        var layerName = pair[0];
-        var layerAddr = pair[1];
+        var layerName = JSONobj.name;
+        var layerAddr = JSONobj.addr;
+
+        if (layerName === null || layerAddr === null)
+        {
+            return
+        }
 
         // opredelenie sloa
         let basemap = new ImageLayer({
