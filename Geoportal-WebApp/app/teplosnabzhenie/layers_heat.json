@@ -1,18 +1,36 @@
 [
     {
       "name": "Границы города",
-      "addr": "my_workSpace_1:istra_boundary"
+      "type": "poly",
+      "addr": "my_workSpace_1:istra_boundary",
+      "style": {
+        "stroke-width": 1.5,
+        "stroke-color": "red",
+        "fill-color": "rgba(100,100,100,0.0)"
+      }
     },
     {
       "name": "Зона теплоснабжения",
-      "addr": "my_workSpace_1:kotelni_zones"
+      "type": "poly",
+      "addr": "my_workSpace_1:kotelni_zones",
+      "style": {
+        "stroke-width": 1,
+        "stroke-color": "yellow",
+        "fill-color": "rgba(100,100,100,0.0)"
+      }
     },
     {
       "name": "Линии теплопередачи",
-      "addr": "my_workSpace_1:kotelni_lines"
+      "type": "line",
+      "addr": "my_workSpace_1:kotelni_lines",
+      "style": {
+        "stroke-width": 1,
+        "stroke-color": "yellow"
+      }
     },
     {
       "name": "Котельные",
+      "type": "point",
       "addr": "my_workSpace_1:kotelni"
     }
 ]
