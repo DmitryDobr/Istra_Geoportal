@@ -27,13 +27,12 @@ const overlay = new Overlay({
     },
   },
 });
-function closeOverlay()  {
+function closeOverlay() {
   overlay.setPosition(undefined);
   closer.blur();
   return false;
 }
 closer.onclick = closeOverlay
-
 
 function showInfo(event) {
   

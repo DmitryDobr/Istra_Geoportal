@@ -4,16 +4,65 @@ import '../_src/styles/mapstyle.css';
 import {View} from 'ol';
 import {Map as OLMap} from 'ol';
 import {ScaleLine, defaults as defaultControls} from 'ol/control.js';
+import Overlay from 'ol/Overlay.js';
 
 import loadLayers from '../_src/scripts/loadLayer';
 import loadTileLayers from '../_src/scripts/loadTile';
 import initLayerControlGroup from '../_src/scripts/addControlGroup';
+import loadVectorLayers from '../_src/scripts/loadVectorLayer';
 
 import JSONDataHeat from './layers_power.json'
 
+var map = null
+const container = document.getElementById('popup');
+const content = document.getElementById('popup-content');
+const closer = document.getElementById('popup-closer');
+
+const overlay = new Overlay({
+  element: container,
+  autoPan: {
+    animation: {
+      duration: 250,
+    },
+  },
+});
+function closeOverlay() {
+  overlay.setPosition(undefined);
+  closer.blur();
+  return false;
+}
+closer.onclick = closeOverlay
+
+function showInfo(event) {
+  
+  const features = map.getFeaturesAtPixel(event.pixel);
+
+  if (features.length == 0) {
+    closeOverlay()
+    return;
+  }
+  else
+  {
+    const properties = features[0].getProperties();
+    let id_ = features[0].id_.split('.',1)
+
+    let featureInfo = properties
+    delete featureInfo.geometry
+
+    const coordinate = event.coordinate;
+    const hdms = JSON.stringify(featureInfo);
+    let innerText = "<p>Идентификатор слоя: " + id_ + "</p>"
+    innerText += "<p>Идентификатор объекта в слое: " + featureInfo.id + "</p>"
+    innerText += "<p>Объект: " + featureInfo.name + "</p>"
+    innerText += "<p>Город: " + featureInfo.city + "</p>"
+
+    content.innerHTML = '<code>Информация об объекте</code><div style="font-size: 14px;">' + innerText + '</div>';
+    overlay.setPosition(coordinate);
+  }
+}
 
 function initMap() {
-  var map = new OLMap({
+  map = new OLMap({
     controls: defaultControls().extend([
       new ScaleLine({
         units: 'metric',
@@ -25,14 +74,18 @@ function initMap() {
       center: [4103032, 7541596],
       zoom: 13,
       extent: [4085209.3395734723,7532196.019379589,4119531.700869216,7547897.008078464]
-    })
+    }),
+    overlays: [overlay]
   });
+
+  map.on('singleclick', showInfo);
+  map.on('movestart', closeOverlay);
 
   var layers1 = loadTileLayers()
   for (var l of layers1) {map.addLayer(l[1])}
   initLayerControlGroup("Картографическая основа", layers1)
 
-  var layers = loadLayers(JSONDataHeat); // zagruzka sloev karti teplosnabzenia
+  var layers = loadVectorLayers(JSONDataHeat); // zagruzka sloev karti teplosnabzenia
   for (var l of layers) {map.addLayer(l[1])}
   initLayerControlGroup("Схема электроснабжения г.Истра", layers)
 }

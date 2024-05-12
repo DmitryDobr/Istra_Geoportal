@@ -64,7 +64,7 @@ const loadVectorLayers = (JSONDataSet) => {
         layer = new VectorLayer({
             source: new VectorSource({
                 url: 'http://' + ip + ':8080/geoserver/my_workSpace_1/ows?service=WFS&version=1.0.0&' + 
-                'request=GetFeature&typeName='+ JSONobj.addr +'&maxFeatures=50&outputFormat=application/json',
+                'request=GetFeature&typeName='+ JSONobj.addr +'&maxFeatures=500&outputFormat=application/json',
                 format: new GeoJSON(),
                 attributions: '@geoserver',
             }),
