@@ -6,16 +6,13 @@ import {Map as OLMap} from 'ol';
 import {ScaleLine, defaults as defaultControls} from 'ol/control.js';
 import Overlay from 'ol/Overlay.js';
 
-import loadLayers from '../_src/scripts/loadLayer';
+// import loadLayers from '../_src/scripts/loadLayer';
 import loadTileLayers from '../_src/scripts/loadTile';
 import initLayerControlGroup from '../_src/scripts/addControlGroup';
+import loadVectorLayers from '../_src/scripts/loadVectorLayer';
 
 
 import JSONDataHeat from './layers_heat.json'
-
-import VectorLayer from 'ol/layer/Vector';
-import VectorSource from 'ol/source/Vector';
-import GeoJSON from 'ol/format/GeoJSON.js';
 
 var map = null
 const container = document.getElementById('popup');
@@ -49,15 +46,19 @@ function showInfo(event) {
   else
   {
     const properties = features[0].getProperties();
+    let id_ = features[0].id_.split('.',1)
 
     let featureInfo = properties
     delete featureInfo.geometry
 
-
     const coordinate = event.coordinate;
     const hdms = JSON.stringify(featureInfo);
+    let innerText = "<p>Идентификатор слоя: " + id_ + "</p>"
+    innerText += "<p>Идентификатор объекта в слое: " + featureInfo.id + "</p>"
+    innerText += "<p>Объект: " + featureInfo.name + "</p>"
+    innerText += "<p>Город: " + featureInfo.city + "</p>"
 
-    content.innerHTML = '<p>Информация об объкете:</p><code>' + hdms + '</code>';
+    content.innerHTML = '<code>Информация об объекте</code><div style="font-size: 14px;">' + innerText + '</div>';
     overlay.setPosition(coordinate);
   }
 }
@@ -86,29 +87,9 @@ function initMap() {
   for (var l of layers1) {map.addLayer(l[1])}
   initLayerControlGroup("Картографическая основа", layers1)
 
-  // var layers = loadLayers(JSONDataHeat); // zagruzka sloev karti teplosnabzenia
-  // for (var l of layers) {map.addLayer(l[1])}
-  // initLayerControlGroup("Схема теплоснабжения г.Истра", layers)
-
-
-  let str = 'my_workSpace_1:kotelni_zones'
-  let strW = 1
-
-  var layer = new VectorLayer({
-    source: new VectorSource({
-      url: 'http://127.0.0.1:8080/geoserver/my_workSpace_1/ows?service=WFS&version=1.0.0&' + 
-      'request=GetFeature&typeName='+str+'&maxFeatures=50&outputFormat=application/json',
-      format: new GeoJSON(),
-      attributions: '@geoserver',
-    }),
-    style: {
-      'stroke-width': strW,
-      'stroke-color': 'red',
-      'fill-color': 'rgba(100,100,100,0.0)',
-    }
-  })
-
-  map.addLayer(layer)
+  var layers = loadVectorLayers(JSONDataHeat); // zagruzka sloev karti teplosnabzenia
+  for (var l of layers) {map.addLayer(l[1])}
+  initLayerControlGroup("Схема теплоснабжения г.Истра", layers)
 }
 
 initMap();

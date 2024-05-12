@@ -4,9 +4,9 @@
       "type": "poly",
       "addr": "my_workSpace_1:istra_boundary",
       "style": {
-        "stroke-width": 1.5,
-        "stroke-color": "red",
-        "fill-color": "rgba(100,100,100,0.0)"
+        "StrokeWidth": 2,
+        "StrokeColor": "rgba(186,85,211,100.0)",
+        "FillColor": "rgba(100,100,100,0.0)"
       }
     },
     {
@@ -14,9 +14,9 @@
       "type": "poly",
       "addr": "my_workSpace_1:kotelni_zones",
       "style": {
-        "stroke-width": 1,
-        "stroke-color": "yellow",
-        "fill-color": "rgba(100,100,100,0.0)"
+        "StrokeWidth": 1,
+        "StrokeColor": "rgba(255,0,0,100.0)",
+        "FillColor": "rgba(100,100,100,0.0)"
       }
     },
     {
@@ -24,13 +24,19 @@
       "type": "line",
       "addr": "my_workSpace_1:kotelni_lines",
       "style": {
-        "stroke-width": 1,
-        "stroke-color": "yellow"
+        "StrokeWidth": 2,
+        "StrokeColor": "rgba(255, 255, 0, 100.0)"
       }
     },
     {
       "name": "Котельные",
       "type": "point",
-      "addr": "my_workSpace_1:kotelni"
+      "addr": "my_workSpace_1:kotelni",
+      "style": {
+        "FillColor" : "rgba(0,0,0,100)",
+        "StrokeColor" : "rgba(0,0,0,100)",
+        "StrokeWidth" : 0,
+        "Radius" : 5
+      }
     }
 ]
