@@ -1,18 +1,43 @@
 [
     {
       "name": "Границы города",
-      "addr": "my_workSpace_1:istra_boundary"
+      "type": "poly",
+      "addr": "my_workSpace_1:istra_boundary",
+      "style": {
+        "StrokeWidth": 2,
+        "StrokeColor": "rgba(186,85,211,100.0)",
+        "FillColor": "rgba(100,100,100,0.0)"
+      }
     },
     {
       "name": "Линии водоснабжения",
-      "addr": "my_workSpace_1:line_water"
+      "type": "line",
+      "addr": "my_workSpace_1:line_water",
+      "style": {
+        "StrokeWidth": 2,
+        "StrokeColor": "rgba(30, 144, 255, 100.0)"
+      }
     },
     {
       "name": "Водозаборные узлы",
-      "addr": "my_workSpace_1:water_get_node"
+      "type": "point",
+      "addr": "my_workSpace_1:water_get_node",
+      "style": {
+        "FillColor" : "rgba(224, 255, 255,100)",
+        "StrokeColor" : "rgba(0,0,0,100)",
+        "StrokeWidth" : 2,
+        "Radius" : 5
+      }
     },
     {
       "name": "Канализационно-насосные станции",
-      "addr": "my_workSpace_1:water_pump_station"
+      "type": "point",
+      "addr": "my_workSpace_1:water_pump_station",
+      "style": {
+        "FillColor" : "rgba(0, 255, 255,100)",
+        "StrokeColor" : "rgba(0,0,0,100)",
+        "StrokeWidth" : 2,
+        "Radius" : 5
+      }
     }
 ]
