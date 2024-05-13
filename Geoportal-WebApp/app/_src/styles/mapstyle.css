@@ -11,7 +11,6 @@
   z-index: -1;
 }
 
-
 main {
   /* min-height: 500px; */
   height: calc(100vh - 140px);
@@ -22,23 +21,6 @@ main {
   z-index: 1;
   margin-top: 70px;
   margin-left: 8px;
-
-  /* display: flex;
-  column-gap: 10px; */
-}
-
-#FeatureInfo {
-  position: absolute;
-  z-index: 1;
-
-  margin-top: 0px;
-  margin-left: 0px;
-
-  min-width: 50px;
-  min-height: 50px;
-  background-color: aqua;
-
-  user-select: none;
 }
 
 #ControlButton{
@@ -79,11 +61,10 @@ main {
 .MapLayerCheckbox {
   margin-right: 10px;
 }
+
 .MapLayerCheckbox:hover {
   cursor: pointer;
 }
-
-
 
 .ol-popup {
   position: absolute;
@@ -96,6 +77,7 @@ main {
   left: -50px;
   min-width: 280px;
 }
+
 .ol-popup:after, .ol-popup:before {
   top: 100%;
   border: solid transparent;
@@ -105,24 +87,28 @@ main {
   position: absolute;
   pointer-events: none;
 }
+
 .ol-popup:after {
   border-top-color: white;
   border-width: 10px;
   left: 48px;
   margin-left: -10px;
 }
+
 .ol-popup:before {
   border-top-color: #cccccc;
   border-width: 11px;
   left: 48px;
   margin-left: -11px;
 }
+
 .ol-popup-closer {
   text-decoration: none;
   position: absolute;
   top: 2px;
   right: 8px;
 }
+
 .ol-popup-closer:after {
   content: "✖";
 }
