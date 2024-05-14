@@ -18,12 +18,15 @@ main {
 
 #HAHA {
   position: absolute;
-  z-index: 1;
-  margin-top: 70px;
-  margin-left: 8px;
+  z-index: 2;
+  /* margin-top: 70px;
+  margin-left: 8px; */
+
+  margin-top: .6em;
+  margin-left: 3.0em;
 }
 
-#ControlButton{
+.ControlButton{
   background-color: white;
   border-radius: 2px;
   color: #666666;
@@ -32,7 +35,7 @@ main {
   border: 1px solid rgba(102, 102, 102,0);
 }
 
-#ControlButton:hover{
+.ControlButton:hover{
   border: 1px solid #666666;
   color: black;
 }
@@ -46,6 +49,7 @@ main {
   padding-bottom: 25px;
   padding-right: 20px;
   display: block;
+  max-width: fit-content;
 }
 
 .LayerControlElem{

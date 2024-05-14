@@ -28,9 +28,33 @@
 
     <div id="map">
       <div id="HAHA">
-        <button class="" id="ControlButton">Состав карты</button>
+        <div>
+          <button class="ControlButton" id="ControlButton">Состав карты</button>
+          <button class="ControlButton" id="measureControlButton">Измерение</button>
+          <span id="measureButtonsBox">
+            <button class="ControlButton" id="LinearControlButton">Линейка</button>
+            <button class="ControlButton" id="AreaControlButton">Планиметр</button>
+          </span>
+        </div>
         <div id="LayerControlBox"></div>
-      </div>  
+      </div>
+      
+      <div class="measureTableBox" >
+        <div class="measureTableTop">
+          <span>X</span>
+          <span>Y</span>
+          <span>Длина</span>
+        </div>
+        <div class="measureTable" id="measureTable">
+        </div>
+        <div class="measureTableBottom">
+          <div>
+            <span>Всего [Длина]:</span>
+            <span id="measureRes"></span>
+          </div>
+          <button class="ControlButton clearButton" id="MeasureClear">Очистить</button>
+        </div>
+      </div>
     </div>
 
     <div id="popup" class="ol-popup">
