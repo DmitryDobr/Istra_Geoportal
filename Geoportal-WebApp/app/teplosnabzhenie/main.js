@@ -7,7 +7,7 @@ import {Map as OLMap} from 'ol';
 import {ScaleLine, defaults as defaultControls} from 'ol/control.js';
 import Overlay from 'ol/Overlay.js';
 
-import {lineMeasureLayer, pointMeasureLayer, measuretool, measureClear} from '../_src/scripts/measureTools.js';
+import {lineMeasureLayer, pointMeasureLayer, polyMeasureLayer, measuretool, measureClear} from '../_src/scripts/measureTools.js';
 
 import loadTileLayers from '../_src/scripts/loadTile';
 import initLayerControlGroup from '../_src/scripts/addControlGroup';
@@ -98,6 +98,7 @@ function initMap() {
   initLayerControlGroup("Схема теплоснабжения г.Истра", layers)
 
   map.addLayer(lineMeasureLayer)
+  map.addLayer(polyMeasureLayer)
   map.addLayer(pointMeasureLayer)
 }
 initMap();
