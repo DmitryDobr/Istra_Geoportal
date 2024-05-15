@@ -26,7 +26,9 @@
 
 .TextMapContainer{
     display: flex;
-    flex-direction: column;
-    row-gap: 10px;
+    flex-direction: row;
+    column-gap: 20px;
+    row-gap: 20px;
+    flex-wrap: wrap;
     padding-left: 15px;
 }

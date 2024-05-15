@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Границы города",
+      "type": "poly",
+      "addr": "my_workSpace_1:istra_boundary",
+      "style": {
+        "StrokeWidth": 2,
+        "StrokeColor": "rgba(186,85,211,100.0)",
+        "FillColor": "rgba(100,100,100,0.0)"
+      }
+    },
+    {
+      "name": "Линии электроснабжения",
+      "type": "line",
+      "addr": "my_workSpace_1:power_lines",
+      "style": {
+        "StrokeWidth": 2,
+        "StrokeColor": "rgba(0, 0, 0, 100.0)"
+      }
+    },
+    {
+      "name": "Электроподстанции",
+      "type": "point",
+      "addr": "my_workSpace_1:power_substation",
+      "style": {
+        "FillColor" : "rgba(255, 255, 240,100)",
+        "StrokeColor" : "rgba(0,0,0,100)",
+        "StrokeWidth" : 2,
+        "Radius" : 5
+      }
+    }
+]

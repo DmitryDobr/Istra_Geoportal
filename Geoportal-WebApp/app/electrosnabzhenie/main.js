@@ -11,7 +11,7 @@ import loadTileLayers from '../_src/scripts/loadTile';
 import initLayerControlGroup from '../_src/scripts/addControlGroup';
 import loadVectorLayers from '../_src/scripts/loadVectorLayer';
 
-import JSONDataHeat from './layers_water.json'
+import JSONDataHeat from './layers_power.json'
 
 var map = null
 const container = document.getElementById('popup');
@@ -87,7 +87,7 @@ function initMap() {
 
   var layers = loadVectorLayers(JSONDataHeat); // zagruzka sloev karti teplosnabzenia
   for (var l of layers) {map.addLayer(l[1])}
-  initLayerControlGroup("Схема водоснабжения г.Истра", layers)
+  initLayerControlGroup("Схема электроснабжения г.Истра", layers)
 }
 
 initMap();

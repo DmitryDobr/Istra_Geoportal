@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "dev": "vite --host",
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview"
@@ -11,6 +12,7 @@
     "vite": "^5.2.10"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "ol": "^9.1.0",
     "path": "^0.12.7",
     "vite-server-plugin-proxy": "^1.0.0-rc.1"

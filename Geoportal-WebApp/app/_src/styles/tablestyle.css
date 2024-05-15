@@ -1,0 +1,44 @@
+.measureTableBox {
+    min-width: 16em;
+    width: fit-content;
+    background-color: aqua;
+    
+    position: absolute;
+    z-index: 1;
+
+    bottom: 9em;
+    right: 1em;
+
+    font-size: 12px;
+    padding: 10px;
+
+    border-radius: 10px;
+}
+
+.measureTableTop {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
+.measureTable {
+    border: 1px solid black;
+    width: auto;
+    display: grid;
+    min-height: 1em;
+    max-height: 8em;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    overflow-y: auto;
+    padding: 2px;
+}
+
+.measureTableBottom {
+    margin-top: 15px;
+}
+
+.clearButton{
+    font-size: 12px;
+    margin-top: 10px;
+}

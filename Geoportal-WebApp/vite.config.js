@@ -21,6 +21,8 @@ export default defineConfig( {
          input: {
             main: resolve(root, 'index.html'),
             teplosnabzhenie: resolve(root, 'teplosnabzhenie/index.html'), // Add your additional pages here
+            vodosnabzhenie: resolve(root, 'vodosnabzhenie/index.html'), // Add your additional pages here
+            electrosnabzhenie: resolve(root, 'electrosnabzhenie/index.html'), // Add your additional pages here
          },
       },
    },
