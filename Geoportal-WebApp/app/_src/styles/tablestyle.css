@@ -1,7 +1,7 @@
 .measureTableBox {
     min-width: 16em;
     width: fit-content;
-    background-color: aqua;
+    background-color: aliceblue;
     
     position: absolute;
     z-index: 1;
@@ -16,17 +16,27 @@
 }
 
 .measureTableTop {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    /* margin-bottom: 5px; */
+    border: 1px solid black;
+    padding: 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.measureTableTop:nth-child(n) {
+    text-align: center;
 }
 
 .measureTable {
     border: 1px solid black;
+    border-top: none;
     width: auto;
     display: grid;
-    min-height: 1em;
-    max-height: 8em;
+    min-height: 1vh;
+    max-height: 10vh;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 10px;
     column-gap: 10px;
@@ -35,10 +45,23 @@
 }
 
 .measureTableBottom {
-    margin-top: 15px;
+    margin-top: 7px;
 }
 
-.clearButton{
+.clearButton {
     font-size: 12px;
     margin-top: 10px;
+    background-color:#acd5eb;
+    border: 0px;
+    border-radius: 3px;
+}
+
+.clearButton:hover {
+    cursor: pointer;
+}
+
+#measureinfo {
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-decoration: underline;
 }

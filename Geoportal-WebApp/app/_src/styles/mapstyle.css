@@ -26,13 +26,22 @@ main {
   margin-left: 3.0em;
 }
 
+.MapControlbuttons {
+  display: flex;
+  row-gap: 5px;
+  column-gap: 5px;
+  flex-wrap: wrap;
+}
+
 .ControlButton{
   background-color: white;
   border-radius: 2px;
   color: #666666;
   border: none;
   height: 1.5em;
-  border: 1px solid rgba(102, 102, 102,0);
+  border: 1px solid rgba(102, 102, 102,0);      
+  outline: none;
+  box-shadow: none;
 }
 
 .ControlButton:hover{

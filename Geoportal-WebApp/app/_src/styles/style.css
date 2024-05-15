@@ -8,7 +8,7 @@ body {
 header {
   background-color: #276e94;
   color: aliceblue;
-  height: 70px;
+  max-height: 70px;
 }
 
 main {
@@ -35,7 +35,7 @@ main {
   position: absolute;
   margin-top: 0.5%;
   right: 25px;
-  z-index: 2;
+  z-index: 3;
   height: auto;
   padding: 15px 5px 20px 5px;
   border-radius: 5px;

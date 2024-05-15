@@ -17,7 +17,7 @@
   </header>
 
   <main>
-    <div id="MapNavigation">
+    <div id="MapNavigation" style="display: none;">
       <div class="MapNavContainer">
         <a href="/" class="MapNavLink">Главная страница</a>
         <a href="/teplosnabzhenie/" class="MapNavLink">Схема теплоснабжения</a>
@@ -28,7 +28,7 @@
 
     <div id="map">
       <div id="HAHA">
-        <div>
+        <div class="MapControlbuttons">
           <button class="ControlButton" id="ControlButton">Состав карты</button>
           <button class="ControlButton" id="measureControlButton">Измерение</button>
           <span id="measureButtonsBox">
@@ -39,31 +39,32 @@
         <div id="LayerControlBox"></div>
       </div>
       
-      <div class="measureTableBox" >
-        <div class="measureTableTop">
-          <span>X</span>
-          <span>Y</span>
-          <span>Длина</span>
-        </div>
-        <div class="measureTable" id="measureTable">
+      <div class="measureTableBox" id="measureTableBox">
+        <div id="measureinfo">Линейка</div>
+        <div id="MeasureTableContent">
+          <div class="measureTableTop">
+            <span>X</span>
+            <span>Y</span>
+            <span>Длина</span>
+          </div>
+          <div class="measureTable" id="measureTable">
+          </div>
         </div>
         <div class="measureTableBottom">
           <div>
             <span>Всего [Длина]:</span>
             <span id="measureRes"></span>
           </div>
-          <button class="ControlButton clearButton" id="MeasureClear">Очистить</button>
+          <button class="clearButton" id="MeasureClear">Очистить</button>
         </div>
       </div>
+      
+      <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+      </div>
     </div>
-
-    <div id="popup" class="ol-popup">
-      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-      <div id="popup-content"></div>
-    </div>
-
     <script type="module" src="./main.js"></script>
-    
   </main>
 
   <footer>
