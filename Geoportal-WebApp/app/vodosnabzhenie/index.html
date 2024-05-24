@@ -28,14 +28,43 @@
 
     <div id="map">
       <div id="HAHA">
-        <button class="" id="ControlButton">Состав карты</button>
+        <div class="MapControlbuttons">
+          <button class="ControlButton" id="ControlButton">Состав карты</button>
+          <button class="ControlButton" id="measureControlButton">Измерение</button>
+          <span id="measureButtonsBox">
+            <button class="ControlButton" id="LinearControlButton">Линейка</button>
+            <button class="ControlButton" id="AreaControlButton">Планиметр</button>
+          </span>
+        </div>
         <div id="LayerControlBox"></div>
       </div>
+
+      <div class="measureTableBox" id="measureTableBox">
+        <div id="measureinfo">Линейка</div>
+        <div id="MeasureTableContent">
+          <div class="measureTableTop">
+            <span>X</span>
+            <span>Y</span>
+            <span>Длина</span>
+          </div>
+          <div class="measureTable" id="measureTable">
+          </div>
+        </div>
+        <div class="measureTableBottom">
+          <div>
+            <span id="measureType">Всего [Длина]:</span>
+            <span id="measureRes"></span>
+          </div>
+          <button class="clearButton" id="MeasureClear">Очистить</button>
+        </div>
+      </div>
+
+      <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+      </div>
     </div>
-    <div id="popup" class="ol-popup">
-      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-      <div id="popup-content"></div>
-    </div>
+    
     <script type="module" src="./main.js"></script>
     
   </main>

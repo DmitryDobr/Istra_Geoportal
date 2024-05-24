@@ -1,12 +1,14 @@
 import '../_src/styles/style.css';
 import '../_src/styles/mapstyle.css';
+import '../_src/styles/tablestyle.css';
 
 import {View} from 'ol';
 import {Map as OLMap} from 'ol';
 import {ScaleLine, defaults as defaultControls} from 'ol/control.js';
 import Overlay from 'ol/Overlay.js';
 
-import loadLayers from '../_src/scripts/loadLayer';
+import {lineMeasureLayer, pointMeasureLayer, polyMeasureLayer, measuretool, measureClear} from '../_src/scripts/measureTools.js';
+
 import loadTileLayers from '../_src/scripts/loadTile';
 import initLayerControlGroup from '../_src/scripts/addControlGroup';
 import loadVectorLayers from '../_src/scripts/loadVectorLayer';
@@ -17,6 +19,11 @@ var map = null
 const container = document.getElementById('popup');
 const content = document.getElementById('popup-content');
 const closer = document.getElementById('popup-closer');
+
+let mode = 2
+// 1 - получение инфы об объектах на карте
+// 2 - линейное измерение
+// 3 - полигональное измерение
 
 const overlay = new Overlay({
   element: container,
@@ -78,7 +85,7 @@ function initMap() {
     overlays: [overlay]
   });
 
-  map.on('singleclick', showInfo);
+  map.on('singleclick', (event) =>{mode === 1 ? showInfo(event) : measuretool(event)});
   map.on('movestart', closeOverlay);
 
   var layers1 = loadTileLayers()
@@ -88,6 +95,10 @@ function initMap() {
   var layers = loadVectorLayers(JSONDataHeat); // zagruzka sloev karti teplosnabzenia
   for (var l of layers) {map.addLayer(l[1])}
   initLayerControlGroup("Схема электроснабжения г.Истра", layers)
+
+  map.addLayer(lineMeasureLayer)
+  map.addLayer(polyMeasureLayer)
+  map.addLayer(pointMeasureLayer)
 }
 
 initMap();
@@ -120,3 +131,22 @@ function MapNavigationVChange() {
   x.style.display = "none";
 }
 document.getElementById("menuButton").addEventListener("click", MapNavigationVChange);
+
+// скрыть показать инструменты измерений
+function MeasureControlBoxVChange() {
+  var x = document.getElementById("measureButtonsBox");
+  var y = document.getElementById("measureTableBox");
+  // console.log(x)
+  if (x.style.display === "none") {
+      x.style.display = "";
+      y.style.display = "";
+      closeOverlay()
+      mode = 2
+  } else {
+      x.style.display = "none";
+      y.style.display = "none";
+      measureClear()
+      mode = 1
+  }
+}
+document.getElementById("measureControlButton").addEventListener("click", MeasureControlBoxVChange);
