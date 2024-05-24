@@ -1,7 +1,7 @@
 import {Feature} from 'ol';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
-import { LineString, MultiPolygon, Point, Polygon, LinearRing } from 'ol/geom';
+import { LineString, Point, Polygon } from 'ol/geom';
 
 import {getLength} from 'ol/sphere';
 

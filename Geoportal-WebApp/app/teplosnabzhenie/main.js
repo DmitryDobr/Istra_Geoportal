@@ -125,12 +125,11 @@ function MapNavigationVChange() {
   // console.log(x)
   if (x.style.display === "none") {
       x.style.display = "block";
+      x = document.getElementById("LayerControlBox");
+      x.style.display = "none";
   } else {
       x.style.display = "none";
   }
-
-  x = document.getElementById("LayerControlBox");
-  x.style.display = "none";
 }
 document.getElementById("menuButton").addEventListener("click", MapNavigationVChange);
 
