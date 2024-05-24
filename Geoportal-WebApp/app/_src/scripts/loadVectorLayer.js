@@ -7,7 +7,8 @@ import Fill from 'ol/style/Fill';
 import Stroke from 'ol/style/Stroke';
 import CircleStyle from 'ol/style/Circle';
 
-var ip = "127.0.0.1"
+// var ip = "127.0.0.1"
+var ip = "192.168.50.234" 
 
 const initStyle = (type, style) => {
 
@@ -66,7 +67,7 @@ const loadVectorLayers = (JSONDataSet) => {
                 url: 'http://' + ip + ':8080/geoserver/my_workSpace_1/ows?service=WFS&version=1.0.0&' + 
                 'request=GetFeature&typeName='+ JSONobj.addr +'&maxFeatures=500&outputFormat=application/json',
                 format: new GeoJSON(),
-                attributions: '@geoserver',
+                // attributions: '@geoserver',
             }),
             style: initStyle(JSONobj.type, JSONobj.style)
         })
